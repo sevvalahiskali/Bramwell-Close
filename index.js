@@ -70,6 +70,7 @@
 
   // Initialize viewer.
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
+  panoElement.style.cursor = 'grabbing';
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
