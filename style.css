@@ -43,8 +43,8 @@ a, a:hover, a:active, a:visited {
   cursor: grabbing; /* Open hand on hover (default state) */
 }
 
-#pano:active {
-  cursor: grab; /* Closed hand while clicking and dragging */
+#pano:not(.is-inert):active {
+  cursor: grab;
 }
 
 #titleBar {
