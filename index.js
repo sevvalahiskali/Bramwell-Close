@@ -70,7 +70,19 @@
 
   // Initialize viewer.
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
-  panoElement.style.cursor = 'grabbing';
+  panoElement.style.cursor = 'grabbing'; // Ensure the initial hover cursor is set
+
+  panoElement.addEventListener('mousedown', function() {
+    panoElement.style.cursor = 'grab';
+  });
+
+  panoElement.addEventListener('mouseup', function() {
+    panoElement.style.cursor = 'grabbing';
+  });
+
+  panoElement.addEventListener('mouseout', function() { // In case the mouse leaves while down
+    panoElement.style.cursor = 'grabbing';
+  });
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
